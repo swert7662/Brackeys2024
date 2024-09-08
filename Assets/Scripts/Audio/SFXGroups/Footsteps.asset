@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6adb4f15a7e02143a8d7677c75f206b, type: 3}
+  m_Name: Footsteps
+  m_EditorClassIdentifier: 
+  groupName: Footsteps
+  soundEffects:
+  - name: wood1
+    clip: {fileID: 8300000, guid: 46100fda67d57774b93da415dd7c9e4f, type: 3}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: wood2
+    clip: {fileID: 8300000, guid: 64508016c866a4e4a8ab0f5b020e5836, type: 3}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: wood3
+    clip: {fileID: 8300000, guid: ebefe735b9b904d4dab6e70b96f6f263, type: 3}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: wood4
+    clip: {fileID: 8300000, guid: 72b4382cae039794bb0dd0df6fb3e292, type: 3}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: wood5
+    clip: {fileID: 8300000, guid: af08ef3832215854f9bdaf450911ee8d, type: 3}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: wood6
+    clip: {fileID: 8300000, guid: f8d171ce8bbdbab4bb4728814885a4a5, type: 3}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  RandomizeGroupVolume: 1
+  volumeRange: {x: 0.8, y: 0.9}
+  RandomizeGroupPitch: 1
+  pitchRange: {x: 0.85, y: 1.5}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6adb4f15a7e02143a8d7677c75f206b, type: 3}
+  m_Name: Misc
+  m_EditorClassIdentifier: 
+  groupName: Misc
+  soundEffects:
+  - name: Shrink
+    clip: {fileID: 8300000, guid: e78a4d5a8b705c941bae4a1f104f351b, type: 3}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  RandomizeGroupVolume: 0
+  volumeRange: {x: 1, y: 1}
+  RandomizeGroupPitch: 1
+  pitchRange: {x: 0.5, y: 2}

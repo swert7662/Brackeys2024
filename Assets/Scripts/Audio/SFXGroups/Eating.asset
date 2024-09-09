@@ -15,8 +15,9 @@ MonoBehaviour:
   groupName: Eating
   soundEffects:
   - name: eating1
-    clip: {fileID: 8300000, guid: 480077d5568317641a27c63d858d7ccd, type: 3}
-    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    clip: {fileID: 0}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be,
+      type: 2}
     volume: 1
     pitch: 1
     loop: 0
@@ -24,7 +25,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: eating2
     clip: {fileID: 8300000, guid: 64d71d21a925f244592fea2fd960d080, type: 3}
-    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be,
+      type: 2}
     volume: 1
     pitch: 1
     loop: 0
@@ -32,7 +34,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: eating3
     clip: {fileID: 8300000, guid: d4ab03b71c3d85f44ae42f23a8c3a721, type: 3}
-    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be,
+      type: 2}
     volume: 1
     pitch: 1
     loop: 0

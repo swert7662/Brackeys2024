@@ -18,6 +18,7 @@ Material:
   - _EMISSION
   - _METALLICGLOSSMAP
   - _NORMALMAP
+  - _USEVERTEXCOLOR_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -217,7 +218,7 @@ Material:
     - _Tiling: 0.25
     - _Tiling2: 1
     - _UVSec: 0
-    - _UseVertexColor: 0
+    - _UseVertexColor: 1
     - _VertexColorChannel: 2
     - _ZWrite: 1
     - __dirty: 0
@@ -227,3 +228,4 @@ Material:
     - _DirtColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

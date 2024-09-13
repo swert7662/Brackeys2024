@@ -82,14 +82,14 @@ Material:
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
     - _Cull: 0
-    - _Cutoff: 0.2857143
+    - _Cutoff: 0.5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _GlossinessSource: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Shininess: 0.033035718
-    - _Smoothness: 0.033035718
+    - _Smoothness: 0.413
     - _SmoothnessSource: 0
     - _SpecSource: 0
     - _SpecularHighlights: 0
@@ -101,6 +101,6 @@ Material:
     - _BaseColor: {r: 0.83137256, g: 0.83137256, b: 0.83137256, a: 1}
     - _Color: {r: 0.83137256, g: 0.83137256, b: 0.83137256, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.094117604, g: 0.094117604, b: 0.094117604, a: 0.033035718}
+    - _SpecColor: {r: 0.094110854, g: 0.094110854, b: 0.094110854, a: 0.413}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -39,13 +39,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClippingThreshold: 0.26
     - _AngleOffset: 26
     - _CellDensity: 3
     - _DisplacementScale: 40
     - _DisplacementStrength: 0.25
-    - _EmissionAmount: 0.18
+    - _EmissionAmount: 0.41
     - _Hardness: -0.01
-    - _HeightTolerance: 0.32
+    - _HeightTolerance: 0.18
     - _NoiseIntensity: 0.8
     - _NoiseScale: 45.7
     - _PulseSpeed: 7.31

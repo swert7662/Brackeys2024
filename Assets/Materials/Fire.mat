@@ -39,6 +39,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClipThreshold: 0.29
     - _AngleOffset: 26
     - _CellDensity: 6
     - _DisplacementScale: 40
@@ -50,7 +51,7 @@ Material:
     - _QueueOffset: 0
     - _SecondaryScale: 10
     m_Colors:
-    - _BaseColor: {r: 47.937256, g: 7.8646803, b: 0, a: 1}
+    - _BaseColor: {r: 47.937256, g: 7.8646803, b: 0, a: 0.98039216}
     - _ScrollSpeed: {r: 0.1, g: -0.5, b: 0, a: 0}
     - _SecondaryScrollSpeed: {r: 0.15, g: -0.35, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -60,12 +60,15 @@ public class NPCStateController : MonoBehaviour
         {
             case ObjectState.Wandering:
                 animator.CrossFade("Walk", 0, 0);
+                animator.CrossFade("Eyes_Blink", 0, 1);
                 break;
             case ObjectState.StandingStill:
                 animator.CrossFade("Idle_A", 0, 0);
+                animator.CrossFade("Eyes_Blink", 0, 1);
                 break;
             case ObjectState.BeingHeld:
                 animator.CrossFade("Fly", 0, 0);
+                animator.CrossFade("Eyes_Spin", 0, 1);
                 break;
         }
     }

@@ -35,11 +35,15 @@ public class FPSInteract : MonoBehaviour
             if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, pickUpRange, interactableLayers))
             {
                 // Currently only Grabbable and Openable objects are supported, consider a switch statement if more types are added
-                if (hit.transform.TryGetComponent(out currentGrabbableObject))
+                currentGrabbableObject = hit.transform.GetComponentInParent<GrabbableObject>();
+
+                if (currentGrabbableObject != null)
                 {
+                    // Debug log that shows the name of the object we are holding
+                    Debug.Log("Holding: " + currentGrabbableObject.name);
                     currentGrabbableObject.Grab(objectGrabPointTransform);
                 }
-                else if (hit.transform.TryGetComponent(out OpenableObject openableObject))
+                else if (hit.transform.GetComponentInParent<OpenableObject>() is OpenableObject openableObject)
                 {
                     openableObject.Open();
                 }

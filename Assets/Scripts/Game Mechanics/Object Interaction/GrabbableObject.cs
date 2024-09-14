@@ -10,15 +10,11 @@ public class GrabbableObject : MonoBehaviour
     private Collider[] colliders;     // Array to store all colliders on the object
 
     [SerializeField] private float followLerpSpeed = 10f;
-    private NavMeshAgent navMeshAgent;
-    private NPCWanderNavMesh wanderScript;
     private NPCStateController npcStateController;
 
     private void Awake()
     {
         objectRigidbody = GetComponent<Rigidbody>();
-        navMeshAgent = GetComponent<NavMeshAgent>(); // Get the NavMeshAgent component
-        wanderScript = GetComponent<NPCWanderNavMesh>(); // Get the wandering script
         npcStateController = GetComponent<NPCStateController>(); // Get the NPCStateController
         colliders = GetComponentsInChildren<Collider>(); // Get all colliders (including child objects)
     }
@@ -39,16 +35,7 @@ public class GrabbableObject : MonoBehaviour
         objectRigidbody.useGravity = false;
         npcStateController.SetBeingHeld(true);
 
-        // Disable NavMeshAgent and wander script when picked up
-        if (navMeshAgent != null)
-        {
-            navMeshAgent.enabled = false;
-        }
-
-        if (wanderScript != null)
-        {
-            wanderScript.enabled = false;
-        }
+        npcStateController.SetBeingHeld(true);
 
         // Disable all colliders to avoid interaction with the player
         foreach (Collider col in colliders)
@@ -63,16 +50,7 @@ public class GrabbableObject : MonoBehaviour
         objectRigidbody.useGravity = true;
         npcStateController.SetBeingHeld(false);
 
-        // Re-enable NavMeshAgent and wander script when dropped
-        if (navMeshAgent != null)
-        {
-            navMeshAgent.enabled = true;
-        }
-
-        if (wanderScript != null)
-        {
-            wanderScript.enabled = true;
-        }
+        npcStateController.SetBeingHeld(false);
 
         // Re-enable all colliders when dropped
         foreach (Collider col in colliders)

@@ -7,7 +7,8 @@ public class ZoneTrigger : MonoBehaviour
         NPCStateController npc = other.GetComponent<NPCStateController>();
         if (npc != null)
         {
-            npc.SetInZone(true); // Set the NPC to InZone state when it enters the zone
+            // Set the NPC to InZone state when it enters the zone
+            npc.SetInZone(true);
         }
     }
 
@@ -16,7 +17,8 @@ public class ZoneTrigger : MonoBehaviour
         NPCStateController npc = other.GetComponent<NPCStateController>();
         if (npc != null)
         {
-            npc.SetInZone(false); // Reset the NPC state when it leaves the zone
+            // Reset the NPC state when it leaves the zone
+            npc.SetInZone(false);
         }
     }
 }

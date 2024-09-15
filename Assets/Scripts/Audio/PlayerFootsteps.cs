@@ -4,8 +4,6 @@ public class PlayerFootsteps : MonoBehaviour
 {
     [Header("Footstep Settings")]
     [SerializeField] private AudioClip[] footstepClips; 
-    [SerializeField] private float minPitch = 0.95f; 
-    [SerializeField] private float maxPitch = 1.05f;
     [SerializeField] private float distanceBetweenSteps = 1.8f; // X-axis distance required for footstep sound
     [SerializeField] private float fallDistanceThreshold = 2.0f;// Y-axis distance required for landing sound
 

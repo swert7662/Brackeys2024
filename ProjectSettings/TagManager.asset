@@ -8,6 +8,7 @@ TagManager:
   - StandPosition
   - GroundCheck
   - TimerBar
+  - BoatSeat
   layers:
   - Default
   - TransparentFX

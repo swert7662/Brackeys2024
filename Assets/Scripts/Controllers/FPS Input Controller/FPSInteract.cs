@@ -47,6 +47,10 @@ public class FPSInteract : MonoBehaviour
                 {
                     openableObject.Open();
                 }
+                else if (hit.transform.GetComponentInParent<WinGameButton>() is WinGameButton winGameButton) 
+                {
+                    winGameButton.OnButtonPressed();
+                }
             }
         }
         else
@@ -66,7 +70,7 @@ public class FPSInteract : MonoBehaviour
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, pickUpRange, interactableLayers))
         {
             // Currently only Grabbable and Openable objects are supported, but if we add more types, we may want to rework how we check for them
-            if (hit.transform.TryGetComponent(out GrabbableObject grabbableObject) || hit.transform.TryGetComponent(out OpenableObject openableObject))
+            if (hit.transform.TryGetComponent(out GrabbableObject grabbableObject) || hit.transform.TryGetComponent(out OpenableObject openableObject) || hit.transform.TryGetComponent(out WinGameButton winGameButton) )
             {
                 reticleImage.color = highlightReticleColor; // Change reticle color when hovering over a grabbable or openable object
                 reticleImage.rectTransform.sizeDelta = Vector2.Lerp(reticleImage.rectTransform.sizeDelta, highlightReticleSize, Time.deltaTime * sizeLerpSpeed);

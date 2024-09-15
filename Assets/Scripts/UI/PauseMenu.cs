@@ -42,6 +42,10 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
 
     }
+    public void StartGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
     public void Restart()
     {

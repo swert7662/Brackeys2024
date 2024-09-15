@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6adb4f15a7e02143a8d7677c75f206b, type: 3}
+  m_Name: Collectable
+  m_EditorClassIdentifier: 
+  groupName: Collectable
+  soundEffects:
+  - name: Banana
+    clip: {fileID: 8300000, guid: a832b58194655924786c320152fb84f5, type: 3}
+    mixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  RandomizeGroupVolume: 0
+  volumeRange: {x: 1, y: 1}
+  RandomizeGroupPitch: 0
+  pitchRange: {x: 1, y: 1}

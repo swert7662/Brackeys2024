@@ -12,11 +12,13 @@ public class BobAndRotateWithEuler : MonoBehaviour
     [SerializeField] private bool rotateAroundZ = false;
 
     private Vector3 initialPosition;
+    private Vector3 initialRotation;
 
     private void Start()
     {
-        // Store the initial position of the object
+        // Store the initial position and rotation of the object
         initialPosition = transform.position;
+        initialRotation = transform.eulerAngles; // Save initial rotation to maintain Z rotation
     }
 
     private void Update()
@@ -25,11 +27,19 @@ public class BobAndRotateWithEuler : MonoBehaviour
         float newY = initialPosition.y + Mathf.Sin(Time.time * bobSpeed) * bobHeight;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
 
-        // Rotating motion
+        // Get current rotation as Euler angles
+        Vector3 currentRotation = transform.eulerAngles;
+
+        // Rotating motion, maintaining the initial Z rotation
         float xRotation = rotateAroundX ? speed * Time.deltaTime : 0f;
         float yRotation = rotateAroundY ? speed * Time.deltaTime : 0f;
         float zRotation = rotateAroundZ ? speed * Time.deltaTime : 0f;
 
-        transform.Rotate(new Vector3(xRotation, yRotation, zRotation));
+        // Apply rotation only to Y axis while keeping the original Z rotation
+        transform.eulerAngles = new Vector3(
+            initialRotation.x + xRotation,
+            currentRotation.y + yRotation,
+            initialRotation.z // Keep initial Z rotation
+        );
     }
 }

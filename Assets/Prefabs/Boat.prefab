@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 4189083335761430500}
   - component: {fileID: 5261919573111010312}
   - component: {fileID: 3244356512108516877}
+  - component: {fileID: 5614328210793773235}
   - component: {fileID: 3789243916192073822}
   m_Layer: 6
   m_Name: Button
@@ -358,6 +359,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5614328210793773235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799749318826728770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bae0a3625464ad459e90d098cf02af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3789243916192073822
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject settingsMenuUI;
 
-    [SerializeField] private Camera mainCamera;
+    //[SerializeField] private Camera mainCamera;
+    [SerializeField] private CinemachineVirtualCamera mainCamera;
 
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
@@ -18,7 +20,7 @@ public class SettingsMenu : MonoBehaviour
         // Initialize settings with current values
         musicVolumeSlider.value = AudioManager.Instance.GetMusicVolume();
         sfxVolumeSlider.value = AudioManager.Instance.GetSFXVolume();
-        postProcessingToggle.isOn = mainCamera.GetUniversalAdditionalCameraData().renderPostProcessing;
+        //postProcessingToggle.isOn = mainCamera.GetUniversalAdditionalCameraData().renderPostProcessing;
 
         // Add listeners to handle changes
         musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
@@ -38,7 +40,8 @@ public class SettingsMenu : MonoBehaviour
 
     private void TogglePostProcessing(bool isEnabled)
     {
-        mainCamera.GetUniversalAdditionalCameraData().renderPostProcessing = isEnabled;
+        Debug.Log("Do Nothing RN");
+        //mainCamera.GetUniversalAdditionalCameraData().renderPostProcessing = isEnabled;
     }
 
     public void Back()

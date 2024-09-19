@@ -115,7 +115,7 @@ Material:
     - _RefractionStrength: 0.05
     - _RefractionWaveSize: 1.5
     - _SecondaryRefractionWaveSize: 3
-    - _Smoothness: 0.8
+    - _Smoothness: 0.632
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

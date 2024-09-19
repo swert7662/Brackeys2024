@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class WinGameButton : MonoBehaviour
 {
     public Animator buttonAnimator;  // Assign the button's animator
+    public PlayableDirector cutsceneDirector;
     public string cutsceneName;      // Placeholder for the cutscene trigger
 
     public void OnButtonPressed()
@@ -19,8 +21,15 @@ public class WinGameButton : MonoBehaviour
 
     private void StartCutscene()
     {
-        // Placeholder for triggering a cutscene
-        Debug.Log("Cutscene starting: " + cutsceneName);
-        // You can add actual cutscene logic here once available
+        // Play the Timeline cutscene via PlayableDirector
+        if (cutsceneDirector != null)
+        {
+            cutsceneDirector.Play();  // Start playing the Timeline
+            Debug.Log("Cutscene starting: " + cutsceneName);
+        }
+        else
+        {
+            Debug.LogError("No PlayableDirector assigned to start the cutscene.");
+        }
     }
 }

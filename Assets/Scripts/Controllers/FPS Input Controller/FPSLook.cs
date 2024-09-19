@@ -23,7 +23,7 @@ public class FPSLook : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         HandleYRotation();
         HandleXRotation();

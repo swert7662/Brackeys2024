@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class NPCStateController : MonoBehaviour
 {
-    public enum ObjectState { Wandering, StandingStill, BeingHeld, InZone }
+    public enum ObjectState { Wandering, StandingStill, BeingHeld, InZone, InAir }
     public ObjectState currentState = ObjectState.StandingStill;
 
     private NavMeshAgent navMeshAgent;
@@ -29,7 +29,7 @@ public class NPCStateController : MonoBehaviour
     private void Update()
     {        
         // If being held or in the zone, don't check the NavMeshAgent's state
-        if (currentState == ObjectState.BeingHeld || currentState == ObjectState.InZone)
+        if (currentState == ObjectState.BeingHeld || currentState == ObjectState.InAir || currentState == ObjectState.InZone)
             return;
 
         // Check if the NPC is moving or standing still
@@ -57,7 +57,7 @@ public class NPCStateController : MonoBehaviour
         }
         else
         {
-            SetState(ObjectState.StandingStill);
+            SetState(ObjectState.InAir);
         }
     }
 
@@ -69,11 +69,24 @@ public class NPCStateController : MonoBehaviour
             SetState(ObjectState.InZone);
             FindAndMoveToSeat();  // Find and move the NPC to a seat on the boat
         }
+        //else
+        //{
+        //    Debug.Log(name + " has left the zone somehow...");
+        //}
+    }
+
+    public void SetInAir(bool isInAir)
+    {
+        if (isInAir)
+        {
+            SetState(ObjectState.InAir);
+        }
         else
         {
             SetState(ObjectState.StandingStill);
         }
     }
+
 
     private void SetState(ObjectState newState)
     {
@@ -83,17 +96,19 @@ public class NPCStateController : MonoBehaviour
             currentState = newState;
             UpdateAnimations();
 
-            // Handle whether movement components should be enabled or disabled
-            if (currentState == ObjectState.BeingHeld || currentState == ObjectState.InZone)
+            // Handle movement components based on the new state
+            if (currentState == ObjectState.BeingHeld || currentState == ObjectState.InZone || currentState == ObjectState.InAir)
             {
-                ManageMovementComponents(false);  // Disable movement components when held or in zone
+                ManageMovementComponents(false);  // Disable NavMesh and movement components
             }
-            else if (priorState == ObjectState.BeingHeld)
+            else if (priorState == ObjectState.InAir && currentState == ObjectState.StandingStill)
             {
-                ManageMovementComponents(true);   // Enable movement components otherwise
+                Debug.Log(name + " has landed on the ground");
+                ManageMovementComponents(true);   // Re-enable components when landing
             }
         }
     }
+
 
     private void ManageMovementComponents(bool enable)
     {
@@ -133,8 +148,39 @@ public class NPCStateController : MonoBehaviour
                 animator.CrossFade("Spin", 0, 0);
                 animator.CrossFade("Eyes_Excited", 0, 1);
                 break;
+            case ObjectState.InAir:
+                animator.CrossFade("Roll", 0, 0);
+                animator.CrossFade("Eyes_Trauma", 0, 1);
+                break;
+
+
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (currentState == ObjectState.InAir)
+        {
+            // Check if the point of collision is on a valid NavMesh surface
+            NavMeshHit hit;
+            bool isOnNavMesh = NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas);
+
+            if (isOnNavMesh)
+            {
+                // If the object landed on a walkable surface, switch to the standing state and activate NavMesh
+                SetInAir(false);
+                Debug.Log(name + " has landed on a walkable surface");
+            }
+            else
+            {
+                // Keep the object in ragdoll-like state (InAir or another state) if it's not on a walkable surface
+                Debug.Log(name + " has collided with a non-walkable surface");
+                // You can keep it in "InAir" or create a ragdoll state if you want more control
+            }
+        }
+    }
+
+
 
     // Find a free seat and move the NPC to the seat
     private void FindAndMoveToSeat()

@@ -16,7 +16,7 @@ MonoBehaviour:
   soundEffects:
   - name: Shrink
     clip: {fileID: 8300000, guid: e78a4d5a8b705c941bae4a1f104f351b, type: 3}
-    mixerGroup: {fileID: 8684523302069253141, guid: c2f22b4ca7a8f864688d1497bd18e4be, type: 2}
+    mixerGroup: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0

@@ -13,6 +13,7 @@ public class FPSLook : MonoBehaviour
 
     private PlayerInput playerInput;
 
+
     private void Start()
     {
         // This script is attached to the camera, which is a child of the player body thus we can refer to it as the head, and grab the parent as the body

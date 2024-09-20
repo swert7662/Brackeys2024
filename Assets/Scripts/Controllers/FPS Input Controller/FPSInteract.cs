@@ -11,6 +11,7 @@ public class FPSInteract : MonoBehaviour
     [SerializeField] private float pickUpRange = 5f;
     [SerializeField] private Image reticleImage;
     [SerializeField] private Color highlightReticleColor = Color.red;
+    [SerializeField] private float throwForce;
 
     private GrabbableObject currentGrabbableObject;
     private Vector2 defaultReticleSize = new Vector2(5f, 5f); 
@@ -55,7 +56,8 @@ public class FPSInteract : MonoBehaviour
         }
         else
         {
-            currentGrabbableObject.Drop();
+            //currentGrabbableObject.Drop();
+            currentGrabbableObject.Throw(cameraTransform.forward, throwForce);
             currentGrabbableObject = null;
         }
 

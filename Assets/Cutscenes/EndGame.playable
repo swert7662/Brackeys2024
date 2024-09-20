@@ -16,6 +16,22 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 8576d026f2abd9f4b9b4de474498f325, type: 2}
+--- !u!114 &-8519997955929274587
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: 27c6fac160255e04ab608cec13e2f628
+    defaultValue: {fileID: 0}
 --- !u!114 &-8162234843212852571
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -34,7 +50,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: -1255784336213165237}
   m_Children: []
   m_Clips: []
   m_Markers:
@@ -57,6 +73,22 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
+--- !u!114 &-6728079154504294575
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: 4458438a108b75346a1693288728055a
+    defaultValue: {fileID: 0}
 --- !u!114 &-6627583165744019348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,7 +123,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 9054325027366652169}
   m_Children: []
   m_Clips: []
   m_Markers:
@@ -1042,12 +1074,37 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 9054325027366652169}
   m_Children: []
   m_Clips: []
   m_Markers:
     m_Objects:
     - {fileID: -131528367974110193}
+--- !u!114 &-1255784336213165237
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fc6f5187a81dc47999eefade6f0935, type: 3}
+  m_Name: Boat Anim Group
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children:
+  - {fileID: -8162234843212852571}
+  - {fileID: 9054325027366652169}
+  m_Clips: []
+  m_Markers:
+    m_Objects: []
 --- !u!114 &-1036963928853300878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1072,35 +1129,17 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: -650782160433417145}
+    m_Asset: {fileID: -8519997955929274587}
     m_Duration: 0.9
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1036963928853300878}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 0.9
+    m_BlendOutDuration: 0.7166666666666667
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1139,37 +1178,19 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: FPS Virtual Camera
   - m_Version: 1
-    m_Start: 0
+    m_Start: 0.18333333333333332
     m_ClipIn: 0
-    m_Asset: {fileID: 2964643014286038054}
-    m_Duration: 5
+    m_Asset: {fileID: -6728079154504294575}
+    m_Duration: 5.766666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1036963928853300878}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.9
+    m_BlendInDuration: 0.7166666666666667
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1206,25 +1227,9 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: FinalCutsceneView
+    m_DisplayName: CutsceneFinalPositionCamera
   m_Markers:
     m_Objects: []
---- !u!114 &-650782160433417145
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: 9cbfa9d8ede758241a6d020abcb45809
-    defaultValue: {fileID: 0}
 --- !u!114 &-131528367974110193
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1255,9 +1260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:
-  - {fileID: -8162234843212852571}
-  - {fileID: -5621040695886826128}
-  - {fileID: -5006967907047189112}
+  - {fileID: -1255784336213165237}
   - {fileID: -1036963928853300878}
   m_FixedDuration: 0
   m_EditorSettings:
@@ -1265,7 +1268,7 @@ MonoBehaviour:
     m_ScenePreview: 1
   m_DurationMode: 0
   m_MarkerTrack: {fileID: 0}
---- !u!114 &2964643014286038054
+--- !u!114 &9054325027366652169
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1274,10 +1277,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
+  m_Script: {fileID: 11500000, guid: d0fc6f5187a81dc47999eefade6f0935, type: 3}
+  m_Name: Boat Spray VFX
   m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: cfc5686899b9b884b8176663bf7532b5
-    defaultValue: {fileID: 0}
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: -1255784336213165237}
+  m_Children:
+  - {fileID: -5006967907047189112}
+  - {fileID: -5621040695886826128}
+  m_Clips: []
+  m_Markers:
+    m_Objects: []

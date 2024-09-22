@@ -12,13 +12,14 @@ public class ZoneTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        NPCStateController npc = other.GetComponent<NPCStateController>();
-        if (npc != null)
-        {
-            // Reset the NPC state when it leaves the zone
-            npc.SetInZone(false);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    Debug.Log("Exit Zone");
+    //    NPCStateController npc = other.GetComponent<NPCStateController>();
+    //    if (npc != null)
+    //    {
+    //        // Reset the NPC state when it leaves the zone
+    //        npc.SetInZone(false);
+    //    }
+    //}
 }

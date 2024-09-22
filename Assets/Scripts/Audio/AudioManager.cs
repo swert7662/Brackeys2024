@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource musicSource; // AudioSource for music
     [SerializeField] private AudioSource sfxSource;   // AudioSource for SFX
     [SerializeField] private SoundEffectGroup[] soundEffectGroups;
+
     private void Awake()
     {
         if (Instance == null)
@@ -24,9 +25,7 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
-
-        
+        }       
     }    
 
     public void SetMasterVolume(float volume)
@@ -96,8 +95,7 @@ public class AudioManager : MonoBehaviour
                 sfx.source.Play();
             }
             else { Debug.LogWarning($"Sound {clipName} not found in group {groupName}"); }
-        }
-        else { Debug.LogWarning($"SoundEffectGroup {groupName} not found"); }
+        } else { Debug.LogWarning($"SoundEffectGroup {groupName} not found"); }
     }
 
     // Overload to play a random sound from a specified group
@@ -115,10 +113,75 @@ public class AudioManager : MonoBehaviour
                 RandomizePitchVolume(group, sfx);
                 sfx.source.Play();
             }
-        }
-        else
-        { Debug.LogWarning($"SoundEffectGroup {groupName} not found or contains no sounds"); }
+        } else { Debug.LogWarning($"SoundEffectGroup {groupName} not found or contains no sounds"); }
     }
+
+    // Method to fade in ambient sound effect
+    public void AmbientSFXFadeIn(string groupName, string clipName, float fadeDuration = 1.5f)
+    {
+        SoundEffectGroup group = Array.Find(soundEffectGroups, g => g.groupName == groupName);
+        if (group != null)
+        {
+            SoundEffect sfx = Array.Find(group.soundEffects, s => s.name == clipName);
+            if (sfx != null)
+            {
+                //sfx.source.loop = true;  // Ensure ambient sound loops
+                sfx.source.Play();
+                StartCoroutine(FadeIn(sfx.source, fadeDuration));
+            } 
+            else { Debug.LogWarning($"Sound {clipName} not found in group {groupName}"); }
+        } else { Debug.LogWarning($"SoundEffectGroup {groupName} not found"); }
+    }
+
+    // Method to fade out ambient sound effect
+    public void AmbientSFXFadeOut(string groupName, string clipName, float fadeDuration = 1.5f)
+    {
+        SoundEffectGroup group = Array.Find(soundEffectGroups, g => g.groupName == groupName);
+        if (group != null)
+        {
+            SoundEffect sfx = Array.Find(group.soundEffects, s => s.name == clipName);
+            if (sfx != null)
+            {
+                StartCoroutine(FadeOut(sfx.source, fadeDuration));
+            } 
+            else { Debug.LogWarning($"Sound {clipName} not found in group {groupName}"); }
+        } else { Debug.LogWarning($"SoundEffectGroup {groupName} not found"); }
+    }
+
+    // Coroutine to fade in an AudioSource
+    private IEnumerator FadeIn(AudioSource audioSource, float duration)
+    {
+        float startVolume = 0f;
+        audioSource.volume = startVolume;
+
+        float currentTime = 0f;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, 1f, currentTime / duration);
+            yield return null;
+        }
+
+        audioSource.volume = 1f;  // Ensure volume is fully set to 1
+    }
+
+    // Coroutine to fade out an AudioSource
+    private IEnumerator FadeOut(AudioSource audioSource, float duration)
+    {
+        float startVolume = audioSource.volume;
+        float currentTime = 0f;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, 0f, currentTime / duration);
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume;  // Reset volume for the next play
+    }
+
     private void RandomizePitchVolume(SoundEffectGroup group, SoundEffect sfx)
     {
         if (group.RandomizeGroupVolume)
@@ -131,40 +194,4 @@ public class AudioManager : MonoBehaviour
             sfx.source.pitch = UnityEngine.Random.Range(group.pitchRange.x, group.pitchRange.y);
         }
     }
-
-
-    /*
-
-    /// <summary>
-    /// Plays a sound effect with a specified pitch variation.
-    /// </summary>
-    /// <param name="clip">The AudioClip to play.</param>
-    /// <param name="pitch">The pitch to apply to the sound.</param>
-    public void PlaySFX(AudioClip clip, float pitch)
-    {
-        if (clip == null) return;
-
-        StartCoroutine(PlaySFXWithPitch(clip, pitch));
-    }
-
-    private IEnumerator PlaySFXWithPitch(AudioClip clip, float pitch)
-    {
-        // Create a temporary GameObject to hold the AudioSource
-        GameObject tempGO = new GameObject("TempAudio");
-        tempGO.transform.SetParent(this.transform);
-
-        // Add an AudioSource component
-        AudioSource tempSource = tempGO.AddComponent<AudioSource>();
-        tempSource.outputAudioMixerGroup = sfxSource.outputAudioMixerGroup; // Ensure it uses the SFX mixer group
-        tempSource.pitch = pitch;
-        tempSource.clip = clip;
-        tempSource.Play();
-
-        // Wait for the clip to finish playing
-        yield return new WaitForSeconds(clip.length / tempSource.pitch);
-
-        // Destroy the temporary GameObject
-        Destroy(tempGO);
-    }
-    */
 }

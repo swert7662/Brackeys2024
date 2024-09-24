@@ -116,6 +116,18 @@ public class AudioManager : MonoBehaviour
         } else { Debug.LogWarning($"SoundEffectGroup {groupName} not found or contains no sounds"); }
     }
 
+    public SoundEffect GetSFX(string groupName)
+    {
+        SoundEffectGroup group = Array.Find(soundEffectGroups, g => g.groupName == groupName);
+        
+        if (group != null && group.soundEffects.Length > 0)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, group.soundEffects.Length);
+            SoundEffect sfx = group.soundEffects[randomIndex];
+            return sfx;
+        } else { Debug.LogWarning($"SoundEffectGroup {groupName} not found or contains no sounds"); return null; }
+    }
+
     // Method to fade in ambient sound effect
     public void AmbientSFXFadeIn(string groupName, string clipName, float fadeDuration = 1.5f)
     {

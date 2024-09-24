@@ -17,6 +17,7 @@ public class NPCStateController : MonoBehaviour
     private bool isSeated = false;                  // Check if the NPC is already seated
     private Transform targetSeat;                   // The seat the NPC is lerping towards
     private Rigidbody rb;
+    private Collider col;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class NPCStateController : MonoBehaviour
         wanderScript = GetComponent<NPCWanderNavMesh>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
     }
 
     private void Update()
@@ -64,7 +66,7 @@ public class NPCStateController : MonoBehaviour
     // Call this method to set the state to InZone when the NPC enters the specific zone
     public void SetInZone(bool inZone)
     {
-        if (inZone)
+        if (inZone && !isSeated)
         {
             SetState(ObjectState.InZone);
             FindAndMoveToSeat();  // Find and move the NPC to a seat on the boat
@@ -200,7 +202,7 @@ public class NPCStateController : MonoBehaviour
             if (seat.CompareTag("BoatSeat") && seat.childCount == 0)
             {
                 Debug.Log(name + " will sit on the seat: " + seat.name);
-                rb.constraints = RigidbodyConstraints.FreezePosition;
+                col.enabled = false;
                 targetSeat = seat;  // Set this seat as the target
                 transform.SetParent(seat);  // Make the NPC a child of the seat
                 gameObject.layer = LayerMask.NameToLayer("Default");
@@ -215,15 +217,30 @@ public class NPCStateController : MonoBehaviour
     {
         if (currentState == ObjectState.InZone && targetSeat != null && !isSeated)
         {
-            // Lerp the NPC to the seat position
-            transform.position = Vector3.Lerp(transform.position, targetSeat.position, lerpSpeed * Time.fixedDeltaTime);
+            // Ensure the NPC is parented to the seat to move relative to it
+            if (transform.parent != targetSeat)
+            {
+                transform.SetParent(targetSeat);  // Set the NPC's parent to the seat
+            }
+
+            // Move the NPC smoothly towards the seat's local position (Vector3.zero for local space)
+            transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, lerpSpeed * Time.fixedDeltaTime);
 
             // Check if the NPC is close enough to the seat
-            if (Vector3.Distance(transform.position, targetSeat.position) < 0.1f)
+            if (Vector3.Distance(transform.localPosition, Vector3.zero) < 0.5f)
             {
-                transform.position = targetSeat.position;  // Snap to the seat
-                isSeated = true;                          // Mark as seated
+                transform.localPosition = Vector3.zero;  // Snap to the seat's local position
+                transform.localRotation = Quaternion.Euler(0, transform.localEulerAngles.y, 0);
+                rb.constraints = RigidbodyConstraints.FreezePosition;                
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+                rb.interpolation = RigidbodyInterpolation.None;
+                //Turn off the collider
+                
+                isSeated = true;                         // Mark as seated
+                Debug.Log(name + " has reached the seat");
             }
         }
     }
+
+
 }

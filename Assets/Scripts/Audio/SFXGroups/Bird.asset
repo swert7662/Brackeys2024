@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6adb4f15a7e02143a8d7677c75f206b, type: 3}
+  m_Name: Bird
+  m_EditorClassIdentifier: 
+  groupName: Bird
+  soundEffects:
+  - name: Chirp1
+    clip: {fileID: 8300000, guid: 1c8bec7d2b88e314792680bca8624142, type: 3}
+    mixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Chirp2
+    clip: {fileID: 8300000, guid: 24a911a11702a164fbb3674a402a8622, type: 3}
+    mixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Chirp3
+    clip: {fileID: 8300000, guid: 785356e6228496f468cd8f9c2623ba79, type: 3}
+    mixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Chirp4
+    clip: {fileID: 8300000, guid: 96b65c8069fc5814da098e603b59cb65, type: 3}
+    mixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Chirp5
+    clip: {fileID: 8300000, guid: 122faf624b426e548b8c4330faa947ce, type: 3}
+    mixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Chirp6
+    clip: {fileID: 8300000, guid: e1ceb3153a208a8469b6ada922039fad, type: 3}
+    mixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  RandomizeGroupVolume: 0
+  volumeRange: {x: 1, y: 1}
+  RandomizeGroupPitch: 0
+  pitchRange: {x: 1, y: 1}

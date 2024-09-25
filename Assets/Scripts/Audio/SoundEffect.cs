@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 [System.Serializable]
-public class SoundEffect 
+public class SoundEffect
 {
     public string name;
 
@@ -20,4 +20,8 @@ public class SoundEffect
 
     [HideInInspector]
     public AudioSource source;
+
+    // Add this property to reference the parent group
+    [HideInInspector]
+    public SoundEffectGroup Group;
 }

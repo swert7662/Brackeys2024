@@ -22,6 +22,10 @@ public class FPSLook : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
+        // Ensure the camera starts a 0, .75, 0 position and 0, 0, 0 rotation
+        playerHead.position = new Vector3(0, 0.75f, 0);
+        playerHead.localEulerAngles = new Vector3(0, 0, 0);
     }
 
     private void Update()

@@ -4,6 +4,9 @@ public class ZoneTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        // Debug log showing what has entered the zone
+        Debug.Log(other.name + " has entered the zone");
+
         NPCStateController npc = other.GetComponent<NPCStateController>();
         if (npc != null)
         {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 
 public class ClickableObject : MonoBehaviour
@@ -7,6 +8,7 @@ public class ClickableObject : MonoBehaviour
     public PlayableDirector cutsceneDirector;
     public string cutsceneName; // Placeholder for the cutscene trigger
     private SeatManager seatManager;
+    public FPSMovement playerMovementComponent;
 
     private void Start()
     {
@@ -36,6 +38,7 @@ public class ClickableObject : MonoBehaviour
         if (cutsceneDirector != null)
         {
             cutsceneDirector.Play();  // Start playing the Timeline
+            playerMovementComponent.enabled = false;
             Debug.Log("Cutscene starting: " + cutsceneName);
         }
         else

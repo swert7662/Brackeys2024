@@ -9,6 +9,7 @@ TagManager:
   - GroundCheck
   - TimerBar
   - BoatSeat
+  - MainCanvas
   layers:
   - Default
   - TransparentFX
@@ -18,12 +19,12 @@ TagManager:
   - UI
   - Interact
   - MainTerrain
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - MonkeyCam
+  - LizardCam
+  - MouseCam
+  - DeerCam
+  - BirdCam
+  - SnakeCam
   - 
   - 
   - 

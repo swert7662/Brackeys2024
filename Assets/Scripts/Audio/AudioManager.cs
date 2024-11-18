@@ -31,10 +31,12 @@ public class AudioManager : MonoBehaviour
     public void SetMasterVolume(float volume) => SetVolume("Master", volume);
     public void SetMusicVolume(float volume) => SetVolume("Music", volume);
     public void SetSFXVolume(float volume) => SetVolume("SFX", volume);
+    public void SetAmbientVolume(float volume) => SetVolume("Ambient", volume);
 
     public float GetMasterVolume() => GetVolume("Master");
     public float GetMusicVolume() => GetVolume("Music");
     public float GetSFXVolume() => GetVolume("SFX");
+    public float GetAmbientVolume() => GetVolume("Ambient");
 
     private void SetVolume(string parameterName, float volume)
     {

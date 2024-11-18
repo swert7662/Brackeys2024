@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class FPSLook : MonoBehaviour
 {
+    public bool sceneDisabler = false;
     [SerializeField] private float sensitivity; // 30 is good for controller, 60 is good for mouse
     //[SerializeField] float gamepadMultiplier = 0.5f;
 
@@ -16,6 +17,8 @@ public class FPSLook : MonoBehaviour
 
     private void Start()
     {
+        if (sceneDisabler)
+            return;
         // This script is attached to the camera, which is a child of the player body thus we can refer to it as the head, and grab the parent as the body
         playerHead = this.transform;
         playerBody = playerHead.parent;
@@ -30,6 +33,8 @@ public class FPSLook : MonoBehaviour
 
     private void Update()
     {
+        if (sceneDisabler)
+            return;
         HandleYRotation();
         HandleXRotation();
     }

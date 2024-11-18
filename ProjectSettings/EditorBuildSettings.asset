@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu Scene.unity
     guid: 30538d19a18813b46b5924200638665c
   - enabled: 1
-    path: Assets/Scenes/Terrain Test Scene.unity
-    guid: 62841f242893c5242b7280b04e07e18b
+    path: Assets/Scenes/Xian Test Scene.unity
+    guid: dec3930385d4284469cefbb0e08b45e1
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -14,14 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groupName: Misc
   soundEffects:
-  - name: Shrink
-    clip: {fileID: 8300000, guid: e78a4d5a8b705c941bae4a1f104f351b, type: 3}
-    mixerGroup: {fileID: 0}
-    volume: 1
+  - name: EngineStart
+    clip: {fileID: 8300000, guid: 8f9ced8843d060d46a3238f35cdc95ec, type: 3}
+    mixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+      type: 2}
+    volume: 0.717
     pitch: 1
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+    Group: {fileID: 11400000}
+  - name: EngineRunning
+    clip: {fileID: 8300000, guid: 9aa15f3be974fec4aabbb7f31dcbcba4, type: 3}
+    mixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+    Group: {fileID: 0}
   RandomizeGroupVolume: 0
   volumeRange: {x: 1, y: 1}
   RandomizeGroupPitch: 1

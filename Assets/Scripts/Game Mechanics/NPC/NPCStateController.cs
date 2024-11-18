@@ -40,7 +40,7 @@ public class NPCStateController : MonoBehaviour
     private void Update()
     {        
         // If being held or in the zone, don't check the NavMeshAgent's state
-        if (currentState == ObjectState.BeingHeld || currentState == ObjectState.InAir || currentState == ObjectState.InZone)
+        if (navMeshAgent == null || currentState == ObjectState.BeingHeld || currentState == ObjectState.InAir || currentState == ObjectState.InZone)
             return;
 
         // Check if the NPC is moving or standing still

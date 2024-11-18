@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class EndGameMenu : MonoBehaviour
 {
-    public GameObject spacerPanel;
     public GameObject endGamePanel;
+    public GameObject spacerPanel;
 
     public RawImage[] endGameScreens;
 

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7489004530060558449}
   - component: {fileID: 8912956112928779676}
   - component: {fileID: 1144580059371188015}
-  - component: {fileID: 3488244750186773518}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -143,40 +142,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!320 &3488244750186773518
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547458938676550981}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: ac35914f71916b741b808e2d258339ea, type: 2}
-  m_InitialState: 0
-  m_WrapMode: 0
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: -8162234843212852571, guid: ac35914f71916b741b808e2d258339ea, type: 2}
-    value: {fileID: 1144580059371188015}
-  - key: {fileID: -5621040695886826128, guid: ac35914f71916b741b808e2d258339ea, type: 2}
-    value: {fileID: 5283812530370916168}
-  - key: {fileID: -5006967907047189112, guid: ac35914f71916b741b808e2d258339ea, type: 2}
-    value: {fileID: 1977476280541338307}
-  - key: {fileID: -1036963928853300878, guid: ac35914f71916b741b808e2d258339ea, type: 2}
-    value: {fileID: 0}
-  m_ExposedReferences:
-    m_References:
-    - e8ee985f89ec3434dab623c8a84669ef: {fileID: 0}
-    - ae6e6249382be364ea023682d98e09fb: {fileID: 0}
-    - 360b7d9bba2b14b4a88fb08f6c6a40c1: {fileID: 0}
-    - 9cd6d55fb6518fd45a373eb3de047eeb: {fileID: 5002724465671650872}
-    - 9bbb2ff129b5c184d9ef08d264409b9b: {fileID: 5002724465671650872}
-    - 9cbfa9d8ede758241a6d020abcb45809: {fileID: 0}
-    - da37949377bde1641a0809e46f06731f: {fileID: 0}
-    - 55443a8f5edf1eb45bb4cee6c6620d9c: {fileID: 0}
-    - cfc5686899b9b884b8176663bf7532b5: {fileID: 0}
 --- !u!1 &587429449770764075
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,8 +409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonAnimator: {fileID: 3244356512108516877}
-  cutsceneDirector: {fileID: 3488244750186773518}
+  cutsceneDirector: {fileID: 0}
   cutsceneName: EndGame
+  playerMovementComponent: {fileID: 0}
 --- !u!1 &890564735706741459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,12 +1318,6 @@ PrefabInstance:
 --- !u!198 &3624904654186902389 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 185723256544304030, guid: d4835cfe9e64cff49aea650b7b4c11f5,
-    type: 3}
-  m_PrefabInstance: {fileID: 3521231903529265387}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5002724465671650872 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8480509716531893971, guid: d4835cfe9e64cff49aea650b7b4c11f5,
     type: 3}
   m_PrefabInstance: {fileID: 3521231903529265387}
   m_PrefabAsset: {fileID: 0}

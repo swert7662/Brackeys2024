@@ -635,6 +635,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 1
+  finalLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  finalScreen: {fileID: 0}
   boatParent: {fileID: 0}
   lerpSpeed: 15
 --- !u!65 &4345275779588020891
@@ -707,6 +711,8 @@ MonoBehaviour:
   pitchRange: {x: 0.95, y: 1.05}
   initialPoolSize: 3
   maxPoolSize: 10
+  sfxMixerGroup: {fileID: -1085006116032818731, guid: f7da1c983c4bd5944ba9e77f2b291f46,
+    type: 2}
 --- !u!1 &5062559287153234616
 GameObject:
   m_ObjectHideFlags: 0

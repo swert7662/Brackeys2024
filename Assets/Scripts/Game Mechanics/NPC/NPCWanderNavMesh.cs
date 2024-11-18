@@ -31,6 +31,7 @@ public class NPCWanderNavMesh : MonoBehaviour
         if (timer >= wanderTimer)
         {
             targetPosition = RandomNavSphere(wanderCenter, wanderRadius, -1);
+            Debug.Log(this.name + " is wandering to " + targetPosition);
             agent.SetDestination(targetPosition);
             timer = 0f;
         }

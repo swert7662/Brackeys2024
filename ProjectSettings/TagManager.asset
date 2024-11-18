@@ -10,6 +10,7 @@ TagManager:
   - TimerBar
   - BoatSeat
   - MainCanvas
+  - Boat
   layers:
   - Default
   - TransparentFX

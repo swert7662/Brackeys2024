@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class Audio3DPlayer : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class Audio3DPlayer : MonoBehaviour
     [Header("AudioSource Pool Settings")]
     public int initialPoolSize = 3;        // Starting number of AudioSources in the pool
     public int maxPoolSize = 10;           // Maximum number of AudioSources allowed
+
+    [Header("Audio Mixer Settings")]
+    [SerializeField] private AudioMixerGroup sfxMixerGroup; // Reference to the SFX mixer group
 
     private float timer;                   // Internal timer to track the interval
     private List<AudioSource> audioSourcePool = new List<AudioSource>();
@@ -69,6 +73,7 @@ public class Audio3DPlayer : MonoBehaviour
         audioSource.spread = spread;
         audioSource.minDistance = minDistance;
         audioSource.maxDistance = maxDistance;
+        audioSource.outputAudioMixerGroup = sfxMixerGroup;
     }
 
     private void PlayRandomSound()
